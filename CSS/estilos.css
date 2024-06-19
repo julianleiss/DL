@@ -1,0 +1,178 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #AFB8BA;
+}
+
+/* header */
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    padding: 32px;
+}
+
+.header h1 {
+    z-index: 1;
+    font-size: 180px;
+    line-height: 94%;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+}
+
+.header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+/* acerca */
+#acerca {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 32px;
+    height: 100%;
+    border-bottom: 1px solid #8A9497;
+}
+
+.about-text {
+    grid-column: 3 / 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-text h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 140%;
+    padding-bottom: 200px;
+    letter-spacing: -0.01em;
+}
+
+.about-text h4 {
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* proyectos */
+#proyectos {
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+#proyectos .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 32px;
+}
+
+#proyectos img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.7s;
+}
+
+#proyectos img:hover {
+    filter: grayscale(0%);
+}
+
+/* seccion contacto */
+#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    height: 560px;
+    border-top: 1px solid #8A9497;
+}
+
+.contacto-boton {
+    background-color: #282C2F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 240px;
+    transition: background-color 1s ease;
+    width: 100%;
+    height: 240px;
+    font-size: 80px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    animation-name: gradiente;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.contacto-boton:hover {
+    background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 600% 600%;
+    animation: gradiente 5s ease infinite;
+    color: #282C2F;
+    border-radius: 32px;
+}
+
+@keyframes gradiente {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* footer */
+.footer {
+    color: #282C2F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer h5 {
+    margin: 0;
+    font-weight: 700;
+}
+
+/* ajuste para mobile */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 64px;
+    }
+    .about-text h3, .about-text h4 {
+        font-size: 18px;
+    }
+    .about-text h4 {
+        font-size: 12px;
+    }
+    .contacto-boton {
+        width: 100%;
+        height: 120px;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+    }
+}
